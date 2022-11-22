@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 
+use App\Http\Livewire\Todos;
+use App\Http\Livewire\Todos1;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,12 +17,10 @@ use Illuminate\Support\Facades\URL;
 |
  */
 
-URL::forceScheme('https');
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+if (env('APP_ENV') !== 'local') {
+  URL::forceScheme('https');
+}
 
 
 Route::middleware([
@@ -27,8 +28,21 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+
+
+  //  Route::get('/dashboard', function () {
+  //      return view('livewire.todos');
+  //  })->name('dashboard');
+
+
+    Route::get('/', Todos1::class)->name('todos1');
+    Route::get('/dashboard', Todos::class)->name('dashboard');
+
+
+/*
+    Route::get('/', function () {
+      return view('dashboard');
+    });
+ */
 });
 
