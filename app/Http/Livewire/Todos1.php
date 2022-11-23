@@ -17,7 +17,7 @@ class Todos1 extends Component
      */
     public function render()
     {
-      return view('livewire.todos1', ['todos'=>Todo::orderBy('id', 'DESC')->paginate(3)]);
+		$count = env('TODOS1_PAGINATE')?env('TODOS1_PAGINATE'):3;
+        return view('livewire.todos1', ['todos'=>Todo::orderBy('id', 'DESC')->paginate($count)]);
     }
-  
 }
