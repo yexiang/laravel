@@ -9,7 +9,7 @@ Jetstream Livewire CRUD Example
 <ul>
 @foreach($todos as $todo)
 <li class="border px-4 py-2">
-{{ $todo->title }}<br />
+<strong>{{ $todo->title }}</strong><br />
 {{ $todo->description}}</li>
 @endforeach
 </ul>
