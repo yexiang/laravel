@@ -4,12 +4,12 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Todo;
+use Livewire\WithPagination;
 
 class Todos1 extends Component
 {
-   public $todos, $title, $description, $todo_id;
-    public $isOpen = 0;
-  
+   use WithPagination;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -17,8 +17,7 @@ class Todos1 extends Component
      */
     public function render()
     {
-        $this->todos = Todo::orderBy('id', 'DESC')->get ();
-        return view('livewire.todos1');
+      return view('livewire.todos1', ['todos'=>Todo::orderBy('id', 'DESC')->paginate(3)]);
     }
   
 }

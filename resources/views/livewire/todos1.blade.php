@@ -12,6 +12,7 @@ Jetstream Livewire CRUD Example
 <strong>{{ $todo->title }}</strong><br />
 {{ $todo->description}}</li>
 @endforeach
+{{ $todos->links() }}
 </ul>
 </div>
 </div>

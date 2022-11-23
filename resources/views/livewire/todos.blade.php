@@ -25,7 +25,7 @@ Manage todos (Jetstream Livewire CRUD Example)
 <th class="px-4 py-2 w-20">No.</th>
 <th class="px-4 py-2">Title</th>
 <th class="px-4 py-2">Desc</th>
-<th class="px-4 py-2 w-40">Action</th>
+<th class="px-4 py-2 w-30">Act</th>
 </tr>
 </thead>
 <tbody>
