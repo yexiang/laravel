@@ -8,7 +8,7 @@ Jetstream Livewire CRUD Example
 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
 <ul>
 @foreach($todos as $todo)
-<li class="border px-4 py-2">
+<li class="border mb-4 px-4 py-2">
 <strong>{{ $todo->title }}</strong><br />
 {{ $todo->description}}</li>
 @endforeach
